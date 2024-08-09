@@ -28,31 +28,8 @@ A responsive, modern, and visually appealing weather dashboard that provides cur
    cd weather-dashboard
 
    Deployment
-## Frontend: Frontend Deployed Link
-## Backend: Backend Deployed Link
-
-## 📂 File Structure
-├── public
-│ ├── index.html
-│ └── ...
-├── src
-│ ├── components
-│ │ ├── WeatherDisplay.jsx
-│ │ ├── SearchBar.jsx
-│ │ └── Favorites.jsx
-│ ├── services
-│ │ └── api.js
-│ ├── App.css
-│ ├── App.js
-│ ├── index.js
-│ └── ...
-├── backend
-│ ├── db.json
-│ ├── server.js
-│ └── ...
-├── .gitignore
-├── package.json
-└── README.md
+## Frontend: https://weatherdashboard-1.onrender.com/
+## Backend: https://weatherdashboard-9wwg.onrender.com
 
 
 ## 🔧 Technologies Used
