@@ -8,8 +8,8 @@ body, html {
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
-  background-attachment: fixed;
-  overflow: hidden; /* Prevent body overflow and scrolling */
+  background-attachment: fixed; /* Keep background fixed */
+  overflow-x: hidden; /* Prevent horizontal scrolling */
 }
 
 .app-container {
@@ -124,7 +124,6 @@ h1 {
   text-align: center;
   margin: 5px 0;
   font-size: 0.875rem;
-  color: #ffffff;
   color: black;
 }
 
