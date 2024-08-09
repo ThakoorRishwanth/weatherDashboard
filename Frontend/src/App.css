@@ -4,19 +4,29 @@ body, html {
   padding: 0;
   font-family: 'Arial', sans-serif;
   color: #ffffff;
-  background-image: url(https://images.pexels.com/photos/924824/pexels-photo-924824.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1);
+  overflow-x: hidden; /* Prevent horizontal scroll */
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('https://images.pexels.com/photos/924824/pexels-photo-924824.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
-  background-attachment: fixed; /* Keep background fixed */
-  overflow-x: hidden; /* Prevent horizontal scrolling */
+  z-index: -1;
+  transform: translateZ(0); /* Helps with the smoothness in some browsers */
 }
 
 .app-container {
   text-align: center;
   padding: 20px;
   position: relative; /* Enable positioning for sidebar */
-  min-height: 100%;
+  min-height: 100vh; /* Ensure container takes full height of the viewport */
 }
 
 h1 {
