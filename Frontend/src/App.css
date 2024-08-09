@@ -8,7 +8,7 @@ body, html {
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
-  background-attachment: fixed;
+  background-attachment: fixed; /* Ensure background image is fixed on all screens */
 }
 
 .app-container {
@@ -16,7 +16,6 @@ body, html {
   padding: 20px;
   position: relative; /* Enable positioning for sidebar */
   min-height: 100%;
-
 }
 
 h1 {
