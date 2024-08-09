@@ -1,6 +1,6 @@
 import React from 'react';
 import { removeFavorite as removeFavoriteFromAPI } from '../services/api';
-import '../app.css';  // Assuming you have CSS specific to Favorites
+import '../App.css';  // Assuming you have CSS specific to Favorites
 
 const Favorites = ({ favorites, setFavorites }) => {
 
