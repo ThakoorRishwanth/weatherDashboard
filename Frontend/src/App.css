@@ -8,7 +8,8 @@ body, html {
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
-  background-attachment: fixed; /* Ensure background image is fixed on all screens */
+  background-attachment: fixed;
+  overflow: hidden; /* Prevent body overflow and scrolling */
 }
 
 .app-container {
