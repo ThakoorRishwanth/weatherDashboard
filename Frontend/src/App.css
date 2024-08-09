@@ -1,10 +1,29 @@
-body, html {
-  height: 100%;
+/* Universal Reset */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
+}
+
+html, body {
+  height: 100%;
   font-family: 'Arial', sans-serif;
   color: #ffffff;
-  overflow-x: hidden; /* Prevent horizontal scroll */
+  overflow-x: hidden;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-image: url(https://images.pexels.com/photos/924824/pexels-photo-924824.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: scroll; /* Disable fixed attachment by default */
 }
 
 body::before {
@@ -14,19 +33,22 @@ body::before {
   left: 0;
   width: 100%;
   height: 100%;
-  background-image: url('https://images.pexels.com/photos/924824/pexels-photo-924824.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
+  background-image: inherit;
+  background-position: inherit;
+  background-size: inherit;
+  background-repeat: inherit;
   z-index: -1;
-  transform: translateZ(0); /* Helps with the smoothness in some browsers */
 }
 
 .app-container {
   text-align: center;
   padding: 20px;
   position: relative; /* Enable positioning for sidebar */
-  min-height: 100vh; /* Ensure container takes full height of the viewport */
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 h1 {
@@ -41,14 +63,17 @@ h1 {
   gap: 5px;
   margin-bottom: 20px;
   position: relative;
+  width: 100%;
+  max-width: 400px;
 }
 
 .search-bar input {
   padding: 5px;
   border-radius: 5px 0 0 5px;
   border: none;
-  width: 250px;
+  width: 70%;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  box-sizing: border-box;
 }
 
 .search-bar button {
@@ -59,6 +84,7 @@ h1 {
   color: #ffffff;
   cursor: pointer;
   border-radius: 0 5px 5px 0;
+  width: 30%;
 }
 
 .search-bar button:hover {
@@ -100,6 +126,7 @@ h1 {
   flex-wrap: wrap;
   gap: 20px;
   margin-top: 20px;
+  max-width: 100%;
 }
 
 .forecast-card {
@@ -112,6 +139,8 @@ h1 {
   color: black;
   width: 150px;
   transition: transform 0.3s ease-in-out;
+  flex: 1 0 120px; /* Flex item that shrinks to 120px */
+  max-width: 150px; /* Limit the maximum width */
 }
 
 .forecast-card:hover {
@@ -253,6 +282,10 @@ h1 {
 }
 
 @media screen and (max-width: 768px) { /* Mobile Screens */
+  body {
+    background-attachment: scroll; /* Disable fixed background on smaller screens */
+  }
+
   .search-bar input {
     width: 180px;
   }
@@ -281,6 +314,10 @@ h1 {
 }
 
 @media screen and (max-width: 480px) { /* Smaller Mobile Screens */
+  body {
+    background-attachment: scroll; /* Disable fixed background on smaller screens */
+  }
+
   .search-bar input {
     width: 150px;
   }
