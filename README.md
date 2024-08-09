@@ -27,9 +27,9 @@ A responsive, modern, and visually appealing weather dashboard that provides cur
    git clone https://github.com/your-username/weather-dashboard.git
    cd weather-dashboard
 
-   Deployment
-## Frontend: https://weatherdashboard-1.onrender.com/
-## Backend: https://weatherdashboard-9wwg.onrender.com
+   ## Deployment
+Frontend: https://weatherdashboard-1.onrender.com/
+Backend: https://weatherdashboard-9wwg.onrender.com
 
 
 ## 🔧 Technologies Used
