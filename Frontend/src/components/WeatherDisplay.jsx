@@ -1,7 +1,7 @@
 import React from 'react';
 import '../App.css';
 
-const WeatherDisplay = ({ data, addFavorite }) => {
+const WeatherDisplay = ({ data, addFavorite, isAddingFavorite, city, favoriteAdded, alreadyAdded }) => {
     if (!data || data.length === 0) {
         return <p className="text-center mt-10">No data available. Please search for a city to view the weather.</p>;
     }
@@ -31,6 +31,17 @@ const WeatherDisplay = ({ data, addFavorite }) => {
         }
     };
 
+    const getNextFiveDays = () => {
+        const today = new Date();
+        return Array.from({ length: 5 }, (_, i) => {
+            const nextDay = new Date(today);
+            nextDay.setDate(today.getDate() + i);
+            return nextDay.toISOString().split('T')[0];
+        });
+    };
+
+    const dates = getNextFiveDays();
+
     return (
         <div className="weather-container">
             <div className="weather-info">
@@ -39,10 +50,11 @@ const WeatherDisplay = ({ data, addFavorite }) => {
             <div className="weather-description">
                 {getWeatherIcon(data[0].description)}
             </div>
+            <h2>Next Five Days Report</h2>  {/* Display the next five days report */}
             <div className="forecast-grid">
                 {data.slice(0, 5).map((forecast, index) => (
                     <div key={index} className="forecast-card">
-                        <h2>{forecast.date.split(' ')[0]}</h2>
+                        <h2>{dates[index]}</h2>  {/* Use calculated date */}
                         <img src={`https://openweathermap.org/img/wn/${forecast.icon}@2x.png`} alt="weather icon" />
                         <p>{forecast.temp}° - {forecast.description}</p>
                         <p>{forecast.humidity}% Humidity</p>
@@ -51,8 +63,12 @@ const WeatherDisplay = ({ data, addFavorite }) => {
                 ))}
             </div>
             <div className="add-favorite-container">
-                <button onClick={addFavorite} className="add-favorite-button-bottom">
-                    Add to Favorite
+                <button 
+                    onClick={addFavorite} 
+                    className={`add-favorite-button-bottom ${isAddingFavorite || favoriteAdded || alreadyAdded ? 'disabled' : ''}`}
+                    disabled={isAddingFavorite || favoriteAdded || alreadyAdded}  // Disable button when loading, added, or already added
+                >
+                    {isAddingFavorite ? 'Loading...' : (favoriteAdded ? 'Added' : 'Add to Favorite')}
                 </button>
             </div>
         </div>

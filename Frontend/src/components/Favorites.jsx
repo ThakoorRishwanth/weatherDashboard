@@ -1,25 +1,14 @@
 import React from 'react';
-import { removeFavorite as removeFavoriteFromAPI } from '../services/api';
-import '../App.css';  // Assuming you have CSS specific to Favorites
+import '../App.css';
 
-const Favorites = ({ favorites, setFavorites }) => {
+const Favorites = ({ favorites, setFavorites, removeFavorite }) => {
 
-    const handleRemove = async (id) => {
-        try {
-            // Remove from JSON server
-            await removeFavoriteFromAPI(id);
-
-            // Update the local favorites state after removal
-            const updatedFavorites = favorites.filter(favorite => favorite.id !== id);
-            setFavorites(updatedFavorites);
-        } catch (error) {
-            console.error('Error removing favorite:', error);
-        }
+    const handleRemove = (id) => {
+        removeFavorite(id); // Call removeFavorite passed down from App.js
     };
 
     return (
         <div className='favorites p-8'>
-            {/* <h2 className='text-3xl font-bold text-white mb-4'>Your Favorite Cities</h2> */}
             {favorites.length === 0 ? (
                 <p className="text-white">No favorites added yet.</p>
             ) : (
