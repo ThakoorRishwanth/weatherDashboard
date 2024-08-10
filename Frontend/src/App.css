@@ -20,7 +20,7 @@ body {
   align-items: center;
   justify-content: center;
   /* background: linear-gradient(135deg, white, black); White to black gradient */
-  background-image: url(https://images5.alphacoders.com/112/thumb-1920-1122260.jpg);
+  background-image: url(https://images4.alphacoders.com/134/thumb-1920-1343375.jpeg);
   /* background-image: url(https://images6.alphacoders.com/132/thumb-1920-1329272.png); */
   background-size: cover;
   background-position: center;
@@ -115,7 +115,7 @@ h1 {
 }
 
 .forecast-card {
-  background: rgba(255, 255, 255, 0.1); /* Transparent background */
+  background: rgba(26, 1, 1, 0.274); /* Transparent background */
   backdrop-filter: blur(10px); /* Blur effect */
   padding: 15px;
   border-radius: 10px;
